@@ -33,36 +33,43 @@ const Menu = () => {
   };
 
   return (
-<div className="relative bg-white border p-4 rounded-xl shadow-md" style={{ height: '400px' }}>
-  <FaChevronLeft
-    size={30}
-    className="absolute left-0 top-1/2 transform -translate-y-1/2 cursor-pointer"
-    onClick={handlePrev}
-  />
-  <img
-    src={productsList[currentIndex]?.image}
-    alt={productsList[currentIndex]?.name}
-    className="w-full h-full rounded-t-xl object-cover"
-  />
-  <FaChevronRight
-    size={30}
-    className="absolute right-0 top-1/2 transform -translate-y-1/2 cursor-pointer"
-    onClick={handleNext}
-  />
-  <div className="p-4 md:p-5">
-    <h3 className="text-lg font-bold text-gray-800">{productsList[currentIndex]?.name}</h3>
-    <p className="mt-1 text-gray-500">{productsList[currentIndex]?.description}</p>
-    <div className="flex items-center mt-2">
-      <span className="mr-2">Rating:</span>
-      <span className="text-yellow-500">{productsList[currentIndex]?.rating || 0}</span>
+<div className="flex  items-center">
+  <div className="relative bg-amber-200 border p-4 rounded-xl shadow-md w-full">
+    <FaChevronLeft
+      size={30}
+      className="absolute left-0 top-1/2 transform -translate-y-1/2 cursor-pointer"
+      onClick={handlePrev}
+    />
+    <div className="relative flex-shrink-0 w-40 h-40 md:w-1/5 md:h-40 float-right">
+      <img
+        src={productsList[currentIndex]?.image}
+        alt={productsList[currentIndex]?.name}
+        className="w-full h-full rounded-xl object-cover relative right-10"
+        style={{ objectFit: 'cover' }}
+      />
     </div>
-    <div className="flex items-center mt-1">
-      <span className="mr-2">Likes:</span>
-      <span>{productsList[currentIndex]?.likes || 0}</span>
-      <FaThumbsUp className="ml-1 text-blue-500" />
+    <div className="p-4 md:p-5 w-full ">
+      <h3 className="text-lg font-bold text-gray-800">{productsList[currentIndex]?.name}</h3>
+      <div className="flex items-center mt-2">
+        <span className="mr-2">Rating:</span>
+        <span className="text-yellow-500">{productsList[currentIndex]?.rating || 3.7}</span>
+      </div>
+      <div className="flex items-center mt-1">
+        <span className="mr-2">Likes:</span>
+        <span>{productsList[currentIndex]?.likes || 782}</span>
+        <FaThumbsUp className="ml-1 text-blue-500" />
+      </div>
     </div>
+    <h1>heyyya</h1>
+    <FaChevronRight
+      size={30}
+      className="absolute right-0 top-1/2 transform -translate-y-1/2 cursor-pointer"
+      onClick={handleNext}
+    />
   </div>
 </div>
+
+
 
 
   );

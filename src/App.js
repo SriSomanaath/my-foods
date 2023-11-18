@@ -4,6 +4,7 @@ import LogIn from './pages/Login'; // Adjust the path accordingly
 import Home from './pages/Home';
 import Menu from './pages/Menu'; // Import the Menu component
 import Experience from './pages/Experience';
+import ContactUs from './pages/contactUs';
 
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(!!localStorage.getItem('user'));
@@ -69,13 +70,18 @@ function App() {
               element={isLoggedIn ? (
                 <>
                   <Home />
+                  <Experience />
                   <Menu />
+                  <ContactUs />
                 </>
               ) : (
+                <>
                 <Home />
+                <Experience />
+                <ContactUs />
+                </>
               )}
             />
-            <Route path="/experience" element={<Experience />} />
           </Routes>
         </div>
 

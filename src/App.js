@@ -72,13 +72,13 @@ function App() {
                   <Home />
                   <Experience />
                   <Menu />
-                  <ContactUs />
+                  {/* <ContactUs /> */}
                 </>
               ) : (
                 <>
                 <Home />
                 <Experience />
-                <ContactUs />
+                {/* <ContactUs /> */}
                 </>
               )}
             />
